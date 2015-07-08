@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<style>
+#block{ height:50px; width:50px; background-color:#FC0004; position:absolute; left:0; top:50px;}
+</style>
+<script>
+window.onload=init;
+function init(){
+	var i=0;
+	var id=setInterval(fn1,10);
+	var button=document.getElementById("button");
+	var flag=true;
+	var block=document.getElementById("block");
+	function fn1(){
+		 console.log(i);
+		 i++;
+		 block.style.left=i+"px";				
+		}
+	
+	button.onclick=function(){
+		if(flag==true){
+			clearInterval(id);
+			flag=false;
+			
+			
+			}else{
+				
+				id=setInterval(fn1,10);
+				flag=true;
+								
+				}
+			
+			
+		}
+	
+	}
+
+
+
+
+</script>
+</head>
+
+<body>
+<div id="block"></div>
+<input type="button" id="button" value="开关"/>
+</body>
+</html>
